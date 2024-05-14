@@ -9,9 +9,9 @@ import os
 
 # Konfigurera InfluxDB
 url = "http://localhost:8086"
-token = "BDLTtAA9DBb-k2z_d76h86xcc-hwGN2S3Vb1_DL12RGLei9_5gue3c0C1qiVM10RI1BaGTPyjHceKq-r_WETXw=="
-org = "candata"
-bucket = "test1"
+token = ""
+org = ""
+bucket = ""
 
 client = InfluxDBClient(url=url, token=token)
 write_api = client.write_api(write_options=SYNCHRONOUS)
@@ -27,7 +27,7 @@ def read_dbc_file(dbc_file_path):
         return None
 
 
-dbc_file_path = "C:/Users/domin/OneDrive/Skrivbord/Itino_inverter.dbc"  # sökvägen till DBC-fil
+dbc_file_path = ""  # sökvägen till DBC-fil
 db = read_dbc_file(dbc_file_path)
 
 
@@ -58,7 +58,7 @@ def influxdb_thread():
 
 
 def serial_communication_thread():
-    HOST = '172.16.222.140'  # IP-adress för Arduino
+    HOST = ''  # IP-adress för Arduino
     PORT = 8080
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
